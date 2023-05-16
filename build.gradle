@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.3.6.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+}
+
+group = 'com.co.meli'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'io.swagger', name: 'swagger-annotations', version: '1.6.10'
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
+	implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.11.0'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.9.RELEASE'
+// https://mvnrepository.com/artifact/io.projectreactor/reactor-core
+	implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.1.7.RELEASE'
+
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
