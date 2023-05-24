@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS TB_DNA_MUTANT;
+CREATE TABLE TB_DNA_MUTANT(
+pk_id_dna INT AUTO_INCREMENT PRIMARY KEY,
+dna_chain VARCHAR,
+dna_id_aplication VARCHAR,
+dna_state_mutant BOOLEAN,
+dna_user_register VARCHAR,
+dna_date_register TIMESTAMP
+);
+
+CREATE UNIQUE INDEX PK_ID_DNA_TABLE ON TB_DNA_MUTANT
+(
+    pk_id_dna
+ );
+
+INSERT INTO TB_DNA_MUTANT VALUES(1, '["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]', 'Magneto','true','admin','2108-04-01 11:00:00');
